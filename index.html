@@ -4,48 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise Ulang Tahun!</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
         }
-        #message {
+        #surprise {
             display: none;
             margin-top: 20px;
         }
-        #message img {
-            width: 100px; /* Ukuran logo surat */
-        }
-        #photo {
-            display: none;
-            margin-top: 20px;
-            width: 70%; /* Sesuaikan agar tidak terlalu besar di layar */
-            max-width: 563px; /* Maksimal ukuran sesuai aslinya */
-            height: auto; /* Menjaga aspek rasio */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
+
     <h1>Wah, hari ini ada apa yah??</h1>
     <p>Kalo mau tau hari ini ada apa, klik tombol di bawah untuk melanjutkan 🎉</p>
+
     <button onclick="showSurprise()">Klik di sini</button>
 
-    <div id="message">
-        <img src="https://cdn-icons-jpg.IMG-20250223-WA0237.jpg" alt="Logo Surat">
-        <p><b>Message for the person in the photo</b></p>
+    <div id="surprise">
+        <img src="https://hindan023.github.io/Ulangtahun/logo.png" alt="Logo Surat">
+        <h2>Message for the person in the photo</h2>
+        <img src="https://hindan023.github.io/Ulangtahun/IMG-20250223-WA0237.jpg" alt="Foto Orangnya" width="563" height="793">
     </div>
-    <img id="photo" src="foto.jpg" alt="Foto Orangnya">
 
     <script>
         function showSurprise() {
-            confetti();
-            alert("Semoga harimu menyenangkan! 🎂");
-            
-            // Menampilkan pesan dan foto
-            document.getElementById("message").style.display = "block";
-            document.getElementById("photo").style.display = "block";
+            document.getElementById("surprise").style.display = "block";
         }
     </script>
+
 </body>
 </html>
