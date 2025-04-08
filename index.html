@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise Ulang Tahun!</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        #surprise {
-            display: none;
-            margin-top: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadiah Untukmu</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #halaman-berikut {
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Selamat Datang!</h1>
-    <p><strong>Ada hadiah buat kamu, klik untuk membuka!</strong></p>
-    <button onclick="showSurprise()">Buka</button>
+  <h1>Selamat Datang!</h1>
+  <p>Aku punya hadiah buat kamu, tapi hanya sebatas ini saja.</p>
+  <p>Jika kamu mau lihat, klik tombol di bawah untuk membuka halaman berikutnya.</p>
 
-    <div id="Hadiah ini Buat Kamu Yang ada di foto😋">
-        <img src="https://hindan023.github.io/Ulangtahun/logo.png" alt="Logo Surat">
-        <h2>Message for the person in the photo</h2>
-        <img src="https://hindan023.github.io/Ulangtahun/IMG-20250223-WA0237.jpg" alt="Foto Orangnya" width="563" height="793">
-    </div>
+  <button onclick="bukaHalaman()">Klik untuk membuka</button>
 
-    <script>
-        function showSurprise() {
-            document.getElementById("surprise").style.display = "block";
-        }
-    </script>
+  <div id="halaman-berikut">
+    <h2>Hai Haii, ternyata kamu membukanya yaa.</h2>
+  </div>
+
+  <script>
+    function bukaHalaman() {
+      document.getElementById("halaman-berikut").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
