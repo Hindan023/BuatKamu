@@ -14,38 +14,28 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }
-
-    .mirrored-container {
-      transform: rotate(-5deg); /* efek miring seperti layar miring */
-      transform-origin: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: relative;
     }
 
     .marquee {
-      white-space: nowrap;
+      position: absolute;
+      bottom: -100px;
       font-size: 3em;
       color: #ff69b4;
-      animation: jalan 10s linear infinite;
-      display: inline-block;
-      transform: rotate(90deg); /* putar teks 90 derajat */
+      animation: naik 10s linear infinite;
     }
 
-    @keyframes jalan {
+    @keyframes naik {
       0% {
-        transform: translateX(100vw) rotate(90deg);
+        bottom: -100px;
       }
       100% {
-        transform: translateX(-100%) rotate(90deg);
+        bottom: 100vh;
       }
     }
   </style>
 </head>
 <body>
-  <div class="mirrored-container">
-    <div class="marquee">Happy Birth Day</div>
-  </div>
+  <div class="marquee">Happy Birth Day</div>
 </body>
 </html>
