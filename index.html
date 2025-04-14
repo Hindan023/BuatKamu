@@ -19,16 +19,17 @@
 
     .marquee {
       position: absolute;
-      bottom: -100px;
+      bottom: -200px;
       font-size: 8em;
       color: #ff69b4;
       animation: naik 10s linear infinite;
-      transform: rotate(90deg); /* Menambahkan rotasi 90 derajat */
+      transform: rotate(90deg);
+      white-space: nowrap; /* Biar teks tetap satu baris */
     }
 
     @keyframes naik {
       0% {
-        bottom: -100px;
+        bottom: -200px;
       }
       100% {
         bottom: 100vh;
