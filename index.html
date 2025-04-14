@@ -3,41 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hadiah Untukmu</title>
+  <title>Happy Birth Day</title>
   <style>
     body {
-      text-align: center;
+      background-color: #fff8f0;
       font-family: Arial, sans-serif;
-      padding: 20px;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
     }
-    #halaman-berikut {
-      display: none;
-      margin-top: 20px;
+    .marquee {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 3em;
+      color: #ff69b4;
+      animation: jalan 10s linear infinite;
+      top: 50%;
+      transform: translateY(-50%);
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 20px;
+    @keyframes jalan {
+      from {
+        left: 100%;
+      }
+      to {
+        left: -100%;
+      }
     }
   </style>
 </head>
 <body>
-
-  <h1>Selamat Datang!</h1>
-  <p>Aku punya hadiah buat kamu, tapi hanya sebatas ini saja.</p>
-  <p>Jika kamu mau lihat, klik tombol di bawah untuk membuka halaman berikutnya.</p>
-
-  <button onclick="bukaHalaman()">Klik untuk membuka</button>
-
-  <div id="halaman-berikut">
-    <h2>Hai Haii, ternyata kamu membukanya yaa.</h2>
-  </div>
-
-  <script>
-    function bukaHalaman() {
-      document.getElementById("halaman-berikut").style.display = "block";
-    }
-  </script>
-
+  <div class="marquee">Happy Birth Day</div>
 </body>
 </html>
