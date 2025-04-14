@@ -6,32 +6,38 @@
   <title>Happy Birth Day</title>
   <style>
     body {
-      background-color: #fff8f0;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
       margin: 0;
       padding: 0;
+      overflow: hidden;
+      background-color: #fff8f0;
+    }
+    .mirrored-container {
+      transform: rotate(-5deg); /* miringkan layar */
+      transform-origin: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .marquee {
-      position: absolute;
       white-space: nowrap;
       font-size: 3em;
       color: #ff69b4;
       animation: jalan 10s linear infinite;
-      top: 50%;
-      transform: translateY(-50%);
     }
     @keyframes jalan {
-      from {
-        left: 100%;
+      0% {
+        transform: translateX(100vw);
       }
-      to {
-        left: -100%;
+      100% {
+        transform: translateX(-100%);
       }
     }
   </style>
 </head>
 <body>
-  <div class="marquee">Happy Birth Day</div>
+  <div class="mirrored-container">
+    <div class="marquee">Happy Birth Day</div>
+  </div>
 </body>
 </html>
