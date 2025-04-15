@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birth Day</title>
   <style>
     body {
@@ -15,6 +15,7 @@
       align-items: center;
       height: 100vh;
       position: relative;
+      flex-direction: column;
     }
 
     .marquee {
@@ -28,42 +29,80 @@
       white-space: nowrap;
     }
 
-    .for-text {
+    .for-text, .you-text {
       position: absolute;
       font-size: 6em;
       color: #ff69b4;
       font-weight: bold;
       opacity: 0;
-      animation: muncul 2s 10s forwards;
       transform: rotate(90deg);
     }
 
+    .for-text {
+      animation: muncul 0.7s 12s forwards, hilang 0.5s 14s forwards;
+    }
+
+    .you-text {
+      animation: muncul 0.7s 15s forwards;
+    }
+
     @keyframes naik {
-      0% {
-        bottom: -750px;
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        bottom: 300vh;
-        opacity: 0;
-      }
+      0% { bottom: -750px; opacity: 1; }
+      90% { opacity: 1; }
+      100% { bottom: 300vh; opacity: 0; }
     }
 
     @keyframes muncul {
+      0% { opacity: 0; transform: scale(0) rotate(90deg); }
+      100% { opacity: 1; transform: scale(1) rotate(90deg); }
+    }
+
+    @keyframes hilang {
+      to { opacity: 0; }
+    }
+
+    .confetti {
+      position: absolute;
+      font-size: 2em;
+      color: #ff69b4;
+      animation: fly 3s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fly {
       0% {
-        opacity: 0;
-        transform: scale(0) rotate(90deg);
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
       }
       100% {
-        opacity: 1;
-        transform: scale(1) rotate(90deg);
+        transform: translateY(-200px) rotate(720deg);
+        opacity: 0;
       }
     }
   </style>
 </head>
+<body>
+  <div class="marquee">Happy Birth Day</div>
+  <div class="for-text">For</div>
+  <div class="you-text">Youuu</div>
+
+  <script>
+    setTimeout(() => {
+      for (let i = 0; i < 20; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.textContent = "Hore!";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = "70vh";
+        confetti.style.animationDelay = (Math.random() * 1).toFixed(2) + "s";
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 4000);
+      }
+    }, 15500); // mulai pas muncul teks Youuu
+  </script>
+</body>
+</html></head>
 <body>
   <div class="marquee">Happy Birth Day</div>
   <div class="for-text">For</div>
