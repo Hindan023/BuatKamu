@@ -22,17 +22,23 @@
       bottom: -750px;
       font-size: 8em;
       color: #ff69b4;
-      animation: naik 10s linear infinite;
+      font-weight: bold;
+      animation: naik 10s linear forwards;
       transform: rotate(90deg);
-      white-space: nowrap; /* Biar teks tetap satu baris */
+      white-space: nowrap;
     }
 
     @keyframes naik {
       0% {
         bottom: -750px;
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
       }
       100% {
         bottom: 300vh;
+        opacity: 0;
       }
     }
   </style>
