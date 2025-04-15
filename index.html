@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birth Day</title>
   <style>
     body {
@@ -38,16 +38,6 @@
       transform: rotate(90deg);
     }
 
-    .photo {
-      position: absolute;
-      opacity: 0;
-      width: 300px;
-      height: auto;
-      animation: tampilFoto 1s 18s forwards;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
     @keyframes naik {
       0% { bottom: -750px; opacity: 1; }
       90% { opacity: 1; }
@@ -62,56 +52,48 @@
     @keyframes hilang {
       to { opacity: 0; }
     }
-
-    @keyframes tampilFoto {
-      to { opacity: 1; }
-    }
   </style>
 </head>
 <body>
   <div class="marquee">Happy Birth Day</div>
   <div class="for-text">For</div>
   <div class="you-text">Youuu</div>
-  <img class="photo" src="foto.jpg" alt="Foto">
 
   <!-- Confetti JS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    // Tampilkan 'For' setelah 12s (marquee selesai + delay 2s)
+    // Munculkan 'For' lebih cepat, setelah 6 detik
     setTimeout(() => {
       document.querySelector('.for-text').style.animation = "muncul 0.7s forwards";
-    }, 12000);
+    }, 6000);
 
-    // Hilangkan 'For' dan munculkan 'Youuu' setelah 14s
+    // Hilangkan 'For', munculkan 'Youuu' setelah 8 detik
     setTimeout(() => {
       document.querySelector('.for-text').style.animation = "hilang 0.5s forwards";
       document.querySelector('.you-text').style.animation = "muncul 0.7s forwards";
-    }, 14000);
+    }, 8000);
 
-    // Confetti saat 'Youuu' muncul
+    // Confetti miring (rotate 90 deg)
     setTimeout(() => {
-      const duration = 3 * 1000;
+      const duration = 3000;
       const end = Date.now() + duration;
 
       (function frame() {
         confetti({
-          particleCount: 5,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-        });
-        confetti({
-          particleCount: 5,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
+          particleCount: 6,
+          angle: 150,
+          spread: 70,
+          scalar: 1,
+          ticks: 100,
+          origin: { x: 0.5, y: 0.5 },
+          zIndex: 999,
         });
 
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         }
       })();
-    }, 14500);
+    }, 8500);
   </script>
 </body>
 </html>
