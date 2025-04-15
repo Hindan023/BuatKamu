@@ -28,6 +28,16 @@
       white-space: nowrap;
     }
 
+    .for-text {
+      position: absolute;
+      font-size: 6em;
+      color: #ff69b4;
+      font-weight: bold;
+      opacity: 0;
+      animation: muncul 2s 10s forwards;
+      transform: rotate(90deg);
+    }
+
     @keyframes naik {
       0% {
         bottom: -750px;
@@ -41,9 +51,21 @@
         opacity: 0;
       }
     }
+
+    @keyframes muncul {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(90deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(90deg);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="marquee">Happy Birth Day</div>
+  <div class="for-text">For</div>
 </body>
 </html>
